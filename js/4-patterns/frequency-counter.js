@@ -4,7 +4,7 @@
 const same = (arr1, arr2) => {
   if (arr1.length !== arr2.length){
     return false;
-  }
+  };
   let counter1 = {};
   let counter2 = {};
   for (let val of arr1){
@@ -22,7 +22,7 @@ const same = (arr1, arr2) => {
     }
   }
   return true;
-}
+};
 
 const one = [1,2,3];
 const two = [1,4,9];
@@ -30,3 +30,28 @@ const three = [1,1,1];
 
 console.log(same(one, two)) // true
 console.log(same(one, three)) // false
+
+const isAnagram = (str1, str2) => {
+  if (str1.length !== str2.length){
+    return false;
+  };
+  const lookup = {};
+  for (let i = 0; i < str1.length; i++){
+    let char = str1[i];
+    // add char to lookup
+    lookup[char] ? lookup[char] += 1 : lookup[char] = 1;
+  }
+  for (let i = 0; i < str2.length; i++){
+    let char = str2[i];
+    if (!lookup[char]){
+      return false;
+    } else {
+      lookup[char] -= 1;
+    }
+    return true;
+  }
+
+};
+
+console.log(isAnagram("one", "noe"));
+console.log(isAnagram("one", "two"));
