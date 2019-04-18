@@ -21,7 +21,13 @@
 
 // helper
 function isAlphanumeric(char) {
-    return "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ".indexOf(char) > -1;
+  var code = char.charCodeAt(0);
+  if (!(code > 47 && code < 58) && // numeric
+      !(code > 64 && code < 91) && // uppers
+      !(code > 96 && code < 123)) { // lowers
+        return false;
+      }
+  return true
 }
 
 // 4. solve and simplify
@@ -32,7 +38,8 @@ const charCount = str => {
   for (let char of str){
     char.toLowerCase();
     // check if char alphanumeric
-    if (/[a-z0-9]/.test(char)) {
+    // if (/[a-z0-9]/.test(char)) { // regex
+    if (isAlphanumeric(char)) {
     // if char in object then increment char in object
       if (output[char] > 0){
         output[char]++;
