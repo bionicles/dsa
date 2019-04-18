@@ -1,0 +1,6 @@
+// add, remove, access: O(1)
+// search: O(N)
+// object.keys: O(N)
+// object.values: O(N)
+// object.entries: O(N)
+// object.hasOwnProperty: O(N)
