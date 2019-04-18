@@ -34,11 +34,10 @@ function isAlphanumeric(char) {
 const charCount = str => {
   // make object to hold char counts
   var output = {};
-  // loop over each string
+  // loop over characters in string
   for (let char of str){
     char.toLowerCase();
-    // check if char alphanumeric
-    // if (/[a-z0-9]/.test(char)) { // regex
+     // if (/[a-z0-9]/.test(char)) { // regex
     if (isAlphanumeric(char)) {
     // if char in object then increment char in object
       if (output[char] > 0){
