@@ -1,4 +1,4 @@
-// nested loops are bad!
+// nested loop O(N^2)!
 const maxSubarraySumLoop = (arr, size) => {
   if (size > arr.length) {
     return null;
